@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Music - 灵动液态 沉浸体验</title>
+    <link rel="stylesheet" href="/mymusicfb/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="glass-overlay"></div>
+    </div>
+
+    <nav class="glass-nav">
+        <div class="logo">
+            <div class="logo-icon"><i class="fas fa-wave-square"></i></div>
+            <span>Aura Music</span>
+        </div>
+        <div class="nav-links">
+            <div class="nav-slider"></div>
+            <a href="#home" class="active">首页</a>
+            <a href="#features">功能</a>
+            <a href="#changelog">日志</a>
+        </div>
+        <div class="nav-actions">
+            <a href="https://github.com/okl137/mymusicfb" target="_blank" class="github-btn-nav" title="GitHub Repository">
+                <i class="fab fa-github"></i>
+            </a>
+            <button class="download-btn-nav" id="nav-download-btn">
+                <span>下载 Windows 版</span>
+                <i class="fab fa-windows"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section with Interactive UI -->
+        <section id="home" class="hero-section">
+            <div class="hero-text">
+                <h1 class="fade-in-up">聆听 <span class="gradient-text">液态</span> 之声</h1>
+                <p class="fade-in-up delay-1">不仅是播放器，更是你的音乐伴侣。极致的玻璃拟态设计，流畅的交互体验。</p>
+                <div class="hero-actions fade-in-up delay-2">
+                    <button class="cta-btn primary" id="hero-download-btn">
+                        <i class="fas fa-download"></i> 立即体验
+                    </button>
+                    <button class="cta-btn secondary" onclick="document.querySelector('#features').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-play"></i> 探索功能
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-ui-container fade-in-right delay-1">
+                <div class="glass-player-frame">
+                    <!-- Sidebar -->
+                    <div class="player-sidebar">
+                        <div class="sidebar-item active" data-target="home-view">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="sidebar-item" data-target="search-view">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="sidebar-item" data-target="playlist-view">
+                            <i class="fas fa-list"></i>
+                        </div>
+                        <div class="sidebar-item" data-target="library-view">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+
+                    <!-- Main Viewport -->
+                    <div class="player-viewport">
+                        <!-- 1. Home View -->
+                        <div class="view-content active" id="home-view">
+                            <div class="view-header">
+                                <h3>每日推荐</h3>
+                                <span class="date-badge">2月30日</span>
+                            </div>
+                            <div class="album-card-large">
+                                <div class="album-art-wrapper">
+                                    <div class="vinyl-disc"></div>
+                                    <img src="https://picsum.photos/300/300?random=1" alt="Album Art">
+                                </div>
+                                <div class="album-info">
+                                    <h4>Neon Nights</h4>
+                                    <p>Synthwave Collection</p>
+                                </div>
+                                <div class="visualizer-bars">
+                                    <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                                    <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Search View -->
+                        <div class="view-content" id="search-view">
+                            <div class="search-box-mock">
+                                <i class="fas fa-search"></i>
+                                <span>Coldplay|</span>
+                            </div>
+                            <div class="search-results-mock">
+                                <div class="result-item" style="--i:1">
+                                    <img src="https://picsum.photos/40/40?random=2">
+                                    <div class="result-text">
+                                        <div class="t1">Yellow</div>
+                                        <div class="t2">Coldplay - Parachutes</div>
+                                    </div>
+                                </div>
+                                <div class="result-item" style="--i:2">
+                                    <img src="https://picsum.photos/40/40?random=3">
+                                    <div class="result-text">
+                                        <div class="t1">Viva La Vida</div>
+                                        <div class="t2">Coldplay - Viva La Vida</div>
+                                    </div>
+                                </div>
+                                <div class="result-item" style="--i:3">
+                                    <img src="https://picsum.photos/40/40?random=4">
+                                    <div class="result-text">
+                                        <div class="t1">Fix You</div>
+                                        <div class="t2">Coldplay - X&Y</div>
+                                    </div>
+                                </div>
+                                 <div class="result-item" style="--i:4">
+                                    <img src="https://picsum.photos/40/40?random=5">
+                                    <div class="result-text">
+                                        <div class="t1">Paradise</div>
+                                        <div class="t2">Coldplay - Mylo Xyloto</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Playlist View -->
+                        <div class="view-content" id="playlist-view">
+                            <div class="view-header">
+                                <h3>我的歌单</h3>
+                            </div>
+                            <div class="playlist-grid-mock">
+                                <div class="playlist-card-mock" style="--i:1">
+                                    <div class="card-cover" style="background-image: url('https://picsum.photos/200/200?random=20'); background-size: cover; background-position: center;"></div>
+                                    <div class="card-name">喜爱音乐</div>
+                                </div>
+                                <div class="playlist-card-mock" style="--i:2">
+                                    <div class="card-cover" style="background-image: url('https://picsum.photos/200/200?random=21'); background-size: cover; background-position: center;"></div>
+                                    <div class="card-name">运动时刻</div>
+                                </div>
+                                <div class="playlist-card-mock" style="--i:3">
+                                    <div class="card-cover" style="background-image: url('https://picsum.photos/200/200?random=22'); background-size: cover; background-position: center;"></div>
+                                    <div class="card-name">深夜EMO</div>
+                                </div>
+                                <div class="playlist-card-mock" style="--i:4">
+                                    <div class="card-cover" style="background-image: url('https://picsum.photos/200/200?random=23'); background-size: cover; background-position: center;"></div>
+                                    <div class="card-name">学习专注</div>
+                                </div>
+                                <div class="playlist-card-mock" style="--i:5">
+                                    <div class="card-cover" style="background-image: url('https://picsum.photos/200/200?random=24'); background-size: cover; background-position: center;"></div>
+                                    <div class="card-name">车载音乐</div>
+                                </div>
+                                <div class="playlist-card-mock" style="--i:6">
+                                    <div class="card-cover" style="background-image: url('https://picsum.photos/200/200?random=25'); background-size: cover; background-position: center;"></div>
+                                    <div class="card-name">纯音乐</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Library View (Likes) -->
+                        <div class="view-content" id="library-view">
+                            <div class="view-header">
+                                <h3><i class="fas fa-heart" style="color: #FF3333;"></i> 我喜欢的音乐</h3>
+                            </div>
+                            <div class="song-list-mock">
+                                <div class="song-row" style="--i:1">
+                                    <span class="idx">01</span>
+                                    <span class="title">Levitating</span>
+                                    <span class="artist">Dua Lipa</span>
+                                </div>
+                                <div class="song-row" style="--i:2">
+                                    <span class="idx">02</span>
+                                    <span class="title">Blinding Lights</span>
+                                    <span class="artist">The Weeknd</span>
+                                </div>
+                                <div class="song-row" style="--i:3">
+                                    <span class="idx">03</span>
+                                    <span class="title">Stay</span>
+                                    <span class="artist">Justin Bieber</span>
+                                </div>
+                                <div class="song-row" style="--i:4">
+                                    <span class="idx">04</span>
+                                    <span class="title">Peaches</span>
+                                    <span class="artist">Justin Bieber</span>
+                                </div>
+                                <div class="song-row" style="--i:5">
+                                    <span class="idx">05</span>
+                                    <span class="title">Bad Habits</span>
+                                    <span class="artist">Ed Sheeran</span>
+                                </div>
+                                <div class="song-row" style="--i:6">
+                                    <span class="idx">06</span>
+                                    <span class="title">Shivers</span>
+                                    <span class="artist">Ed Sheeran</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Player Control Bar -->
+                    <div class="player-controls-bar">
+                        <div class="mini-cover"></div>
+                        <div class="mini-info">
+                            <div class="mini-title">Neon Nights</div>
+                            <div class="mini-artist">Synthwave</div>
+                        </div>
+                        <div class="mini-actions">
+                            <i class="fas fa-step-backward"></i>
+                            <div class="mini-play-btn"><i class="fas fa-play"></i></div>
+                            <i class="fas fa-step-forward"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ui-instruction">
+                    <i class="fas fa-mouse-pointer"></i> 点击左侧图标切换功能界面
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section (Redesigned) -->
+        <section id="features" class="features-section-v2">
+            <h2 class="section-heading">功能特性</h2>
+            
+            <!-- Feature 1: Smart Recommend -->
+            <div class="feature-row">
+                <div class="feature-content reveal fade-right">
+                    <h3>智能推荐算法</h3>
+                    <p>抛弃千篇一律的榜单。Aura Music 能够深度分析你的红心收藏，为你生成专属的“每日推荐”与“私人雷达”。</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> 每次启动自动刷新，时刻保持新鲜</li>
+                        <li><i class="fas fa-check-circle"></i> 基于听歌口味的精准匹配</li>
+                    </ul>
+                </div>
+                <div class="feature-demo reveal fade-left">
+                    <div class="demo-card-stack">
+                        <div class="demo-card card-1">
+                            <img src="https://picsum.photos/200/200?random=10" alt="Cover">
+                            <div class="demo-card-info">Daily Mix</div>
+                        </div>
+                        <div class="demo-card card-2">
+                            <img src="https://picsum.photos/200/200?random=11" alt="Cover">
+                            <div class="demo-card-info">Radar</div>
+                        </div>
+                        <div class="demo-card card-3">
+                            <img src="https://picsum.photos/200/200?random=12" alt="Cover">
+                            <div class="demo-card-info">Flow</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 2: Playlist Import -->
+            <div class="feature-row reverse">
+                <div class="feature-content reveal fade-left">
+                    <h3>无缝歌单迁移</h3>
+                    <p>一键将你网易云音乐的歌单汇聚于此。支持歌单链接 快速导入。</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> 毫秒级极速导入</li>
+                        <li><i class="fas fa-check-circle"></i> 智能匹配最佳音源</li>
+                    </ul>
+                </div>
+                <div class="feature-demo reveal fade-right">
+                    <div class="import-demo-box">
+                        <!-- Source Node: NetEase -->
+                        <div class="transfer-node source">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        
+                        <!-- Connection Stream -->
+                        <div class="transfer-stream">
+                            <div class="stream-track"></div>
+                            <div class="stream-particle p1"></div>
+                            <div class="stream-particle p2"></div>
+                            <div class="stream-particle p3"></div>
+                            <div class="stream-particle p4"></div>
+                        </div>
+                        
+                        <!-- Target Node -->
+                        <div class="transfer-node target">
+                            <i class="fas fa-layer-group"></i>
+                            <div class="success-ring"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 3: Global Search -->
+            <div class="feature-row">
+                <div class="feature-content reveal fade-right">
+                    <h3>全局搜索</h3>
+                    <p>聚合全网资源。无论你想听什么，只要输入关键词，我们就能为你找到最高音质的版本。</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> 支持模糊搜索与拼音匹配</li>
+                        <li><i class="fas fa-check-circle"></i> 聚合多个音源结果</li>
+                    </ul>
+                </div>
+                <div class="feature-demo reveal fade-left">
+                    <div class="search-demo-box">
+                        <div class="demo-search-bar">
+                            <i class="fas fa-search"></i>
+                            <span class="typing-text">Taylor Swift</span>
+                        </div>
+                        <div class="demo-search-results">
+                            <div class="demo-res-item item-1">
+                                <div class="res-icon"><i class="fas fa-music"></i></div>
+                                <div class="res-lines"><div class="line w-80"></div><div class="line w-40"></div></div>
+                            </div>
+                            <div class="demo-res-item item-2">
+                                <div class="res-icon"><i class="fas fa-music"></i></div>
+                                <div class="res-lines"><div class="line w-70"></div><div class="line w-50"></div></div>
+                            </div>
+                            <div class="demo-res-item item-3">
+                                <div class="res-icon"><i class="fas fa-music"></i></div>
+                                <div class="res-lines"><div class="line w-60"></div><div class="line w-30"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 4: Pure Music (Ad Block) -->
+            <div class="feature-row reverse">
+                <div class="feature-content reveal fade-left">
+                    <h3>纯净听歌体验</h3>
+                    <p>我们承诺永久无广告。没有弹窗，没有推广，只有最纯粹的音乐。让你的每一次点击，都只为聆听。</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> 0 广告干扰</li>
+                        <li><i class="fas fa-check-circle"></i> 极简界面设计</li>
+                    </ul>
+                </div>
+                <div class="feature-demo reveal fade-right">
+                    <div class="pure-demo-box">
+                        <div class="pure-shield">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="ad-particle ap-1"></div>
+                        <div class="ad-particle ap-2"></div>
+                        <div class="ad-particle ap-3"></div>
+                        <div class="ad-particle ap-4"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Changelog -->
+        <section id="changelog" class="changelog-section">
+             <div class="glass-container reveal zoom-in">
+                <h2>更新日志</h2>
+                <div class="log-entry">
+                    <div class="log-date">2025.12.25</div>
+                    <div class="log-version">v1.0</div>
+                    <div class="log-desc">
+                        <ul>
+                            <li>创建 Aura Music 桌面播放器，完成首个稳定版本</li>
+                            <li>打造液态玻璃质感界面，导航与播放器全面统一风格</li>
+                            <li>新增流光呼吸背景与 3D 倾斜交互，带来沉浸式观感</li>
+                            <li>整合智能推荐、歌单迁移、全局搜索等核心功能展示</li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Designed for Music Lovers. &copy; 2023 Aura Music.</p>
+    </footer>
+
+    <script src="/mymusicfb/script.js"></script>
+</body>
+</html>
